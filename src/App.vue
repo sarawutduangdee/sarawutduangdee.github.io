@@ -5,7 +5,6 @@ import HeroSection from './components/sections/HeroSection.vue'
 import AboutSection from './components/sections/AboutSection.vue'
 import SkillsSection from './components/sections/SkillsSection.vue'
 import ExperienceSection from './components/sections/ExperienceSection.vue'
-// import ProjectsSection from './components/sections/ProjectsSection.vue'
 import ContactSection from './components/sections/ContactSection.vue'
 import avatarImg from './assets/S__56139782.jpg'
 
@@ -38,8 +37,14 @@ const skills = [
 
 const experiences = [
   {
+    role: 'Back-end Developer (Contract) · Client: KTB',
+    period: 'Mar 2026 — Present',
+    company: 'Azure Computers (Thailand) Co., Ltd.',
+    description: 'Project LEXS: Enhanced business logic, Java Spring Boot modifications, new features, bug fixes. Unit Testing'
+  },
+  {
     role: 'Java Developer (Contract) · Client: SCB',
-    period: 'Oct 2025 — Present',
+    period: 'Oct 2025 — Mar 2026',
     company: 'Advanced Systems Consulting (ASC)',
     description: 'Wealth Platform Team: Collaborated on maintenance and development of high-scale wealth management systems. RISS Team: Troubleshooting, bug fixing, and developing new features. Designed robust back-end using Java 17/21 and Spring Boot, RESTful APIs and microservices. Comprehensive Unit Testing for code reliability.'
   },
@@ -132,7 +137,6 @@ const experiences = [
       />
       <SkillsSection :skills="skills" />
       <ExperienceSection :items="experiences" />
-      <!-- <ProjectsSection :projects="projects" /> -->
       <ContactSection
         :email="profile.email"
         :phone="profile.phone"
