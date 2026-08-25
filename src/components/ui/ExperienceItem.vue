@@ -4,6 +4,7 @@ defineProps<{
   period: string
   company: string
   description: string
+  highlights?: string[]
 }>()
 </script>
 
@@ -16,5 +17,8 @@ defineProps<{
     </div>
     <h4 class="text-slate-700 font-medium mb-3">{{ company }}</h4>
     <p class="text-slate-600">{{ description }}</p>
+    <ul v-if="highlights?.length" class="mt-3 space-y-1.5 text-slate-600 list-disc pl-5">
+      <li v-for="(point, i) in highlights" :key="i">{{ point }}</li>
+    </ul>
   </div>
 </template>

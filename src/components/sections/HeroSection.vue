@@ -1,5 +1,7 @@
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue'
+
+const props = defineProps<{
   headline?: string
   highlight?: string
   subheadline?: string
@@ -11,6 +13,13 @@ defineProps<{
   githubUrl?: string
   linkedinUrl?: string
 }>()
+
+const roles = computed(() =>
+  (props.subheadline ?? '')
+    .split('|')
+    .map((part) => part.replace(/^[\s—–-]+/, '').trim())
+    .filter(Boolean)
+)
 </script>
 
 <template>
@@ -18,9 +27,22 @@ defineProps<{
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="text-center lg:text-left">
-          <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
-            {{ headline ?? 'Building' }} <span class="text-indigo-600">{{ highlight ?? 'Digital Experiences' }}</span> {{ subheadline ?? 'that scale.' }}
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
+            {{ headline ?? 'Hi, I\'m' }}
+            <span class="text-indigo-600">{{ highlight ?? 'Digital Experiences' }}</span>
           </h1>
+          <div
+            v-if="roles.length"
+            class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6"
+          >
+            <span
+              v-for="role in roles"
+              :key="role"
+              class="px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-700 text-sm sm:text-base font-semibold"
+            >
+              {{ role }}
+            </span>
+          </div>
           <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0">
             {{ description ?? 'Senior Web Developer specializing in Vue 3, Vite, and modern UI/UX design. I bridge the gap between complex backend systems and beautiful, intuitive interfaces.' }}
           </p>

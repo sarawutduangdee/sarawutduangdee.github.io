@@ -6,6 +6,7 @@ export interface Experience {
   period: string
   company: string
   description: string
+  highlights?: string[]
 }
 
 defineProps<{
@@ -26,6 +27,7 @@ defineProps<{
           :period="item.period"
           :company="item.company"
           :description="item.description"
+          :highlights="item.highlights"
         />
       </div>
     </div>
