@@ -38,7 +38,7 @@ const skills = [
 const experiences = [
   {
     role: 'Back-end Developer (Contract) · Client: AIS',
-    period: 'Aug 2026 — Present',
+    period: 'Aug 2026 — Oct 2026',
     company: 'PE Resourcing Service Co.,Ltd.',
     description:
       'Contract back-end developer for AIS: Java Spring Boot services, business-logic changes, new features, and defect fixes with the client team.',
